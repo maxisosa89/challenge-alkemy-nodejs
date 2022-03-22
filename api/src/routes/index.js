@@ -16,12 +16,12 @@ const { putGenre } = require("./Genres/putGenre");
 /*          Configuracion de rutas:        */
 
 // Reviews:
-router.get("/genres",  getGenres)
-router.post("/genres", postGenre)
-router.delete("/genres/:idGenre", deleteGenre)
-router.put("/genres/:idGenre", putGenre)
-router.post("/signIn", AuthController.signIn)
-router.post("/signUp", AuthController.signUp)
+router.get("/genres", auth, getGenres)
+router.post("/genres", auth, postGenre)
+router.delete("/genres/:idGenre", auth, deleteGenre)
+router.put("/genres/:idGenre", auth, putGenre)
+router.post("/signin", AuthController.signIn)
+router.post("/signup", AuthController.signUp)
 
 
 module.exports = router;

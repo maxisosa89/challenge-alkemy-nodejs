@@ -66,14 +66,14 @@ const { Character, Movie, Genre, User, Role } = sequelize.models;
 
 
 //muchos a muchos
-Character.belongsToMany(Movie, { as: "Movie", through: 'character_movie', foreignKey: "character_id" });
-Movie.belongsToMany(Character, { as: "Character", through: 'character_movie', foreignKey: "movie_id" }); 
+Character.belongsToMany(Movie, { as: "movie", through: 'character_movie', foreignKey: "character_id" });
+Movie.belongsToMany(Character, { as: "character", through: 'character_movie', foreignKey: "movie_id" }); 
 
-Movie.belongsToMany(Genre, { as: "Movie", through: 'movie_genre', foreignKey: "movie_id" });
-Genre.belongsToMany(Movie, { as: "Genre", through: 'movie_genre', foreignKey: "genre_id" }); 
+Movie.belongsToMany(Genre, { as: "genre", through: 'movie_genre', foreignKey: "movie_id" });
+Genre.belongsToMany(Movie, { as: "movie", through: 'movie_genre', foreignKey: "genre_id" }); 
 
-User.belongsToMany(Role, { as: "User", through: 'user_role', foreignKey: "user_id" });
-Role.belongsToMany(User, { as: "Role", through: 'user_role', foreignKey: "role_id" }); 
+User.belongsToMany(Role, { as: "role", through: 'user_role', foreignKey: "user_id" });
+Role.belongsToMany(User, { as: "user", through: 'user_role', foreignKey: "role_id" }); 
 
 /* uno a muchos
 Model1.hasMany(Model2);

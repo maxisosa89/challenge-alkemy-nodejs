@@ -13,6 +13,7 @@ module.exports = (sequelize) => {
     nameGenre: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
         notNull: {
           msg: "Name cannot be null."

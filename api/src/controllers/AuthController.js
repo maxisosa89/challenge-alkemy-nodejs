@@ -15,7 +15,7 @@ module.exports = {
                 throw new Error("User not found.")
             } else {
                 if (bcrypt.compareSync(password, user.password)) {
-                    let token = jwt.sign({ user }, authConfig.secret, {
+                    let token = jwt.sign({ user: user }, authConfig.secret, {
                         expiresIn: authConfig.expires
                     })
                     res.json({
@@ -27,7 +27,7 @@ module.exports = {
                 }
             }
         }).catch(err => {
-            res.send(err)
+            res.status(401).send(err)
         })
     },
 
@@ -40,15 +40,16 @@ module.exports = {
             email,
             password
         }).then(user => {
-            let token = jwt.sign({ user }, authConfig.secret, {
+            let token = jwt.sign({ user: user }, authConfig.secret, {
                 expiresIn: authConfig.expires
             })
             res.json({
                 user: user,
-                token: token
+                token: token,
+                msg: "Registered. Please login."
             })
         }).catch(err => {
-            res.send(err)
+            res.send(err.message)
         }) 
     }
 }

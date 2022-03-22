@@ -5,10 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const url = "/genres";
 
-export default function () {
+export default function ({token}) {
+    const navigate = useNavigate()
     const [genres, setGenres] = useState();
     const [modalInsert, setModalInsert] = useState(false);
     const [modalDelete, setModalDelete] = useState(false);
@@ -20,14 +22,35 @@ export default function () {
     })
     
     const getGenres = async() => {
-        await axios.get(url).then(response => {
+        
+        await axios.get(url, {
+            headers: {
+                'authorization': `Bearer ${token}`,
+                'Accept' : 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            
             setGenres(response.data)
-        }).catch(err => console.log(err))
+        }).catch(err => {
+
+            alert("Sign In first...")
+            navigate("/")
+            
+        })
     }
     const postGenre = async()=> {
-        await axios.post(url, form).then(response => {
-            openModal()
-            getGenres()
+        await axios.post(url, form,  {
+            headers: {
+                'authorization': `Bearer ${token}`,
+                'Accept' : 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            if (response.data === "Genre created"){
+                openModal()
+                getGenres()
+            }
             alert(response.data)
         }).catch(err => console.log(err))
     }
@@ -43,9 +66,17 @@ export default function () {
 
     const putGenre = async() => {
         
-        await axios.put(url+"/"+form.idGenre, form).then(response => {
-            openModal()
-            getGenres()
+        await axios.put(url+"/"+form.idGenre, form,  {
+            headers: {
+                'authorization': `Bearer ${token}`,
+                'Accept' : 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            if (response.data === "Genre updated!"){
+                openModal()
+                getGenres()
+            }
             alert(response.data)
         }).catch(err => console.log(err))
     }
@@ -64,7 +95,13 @@ export default function () {
     }
 
     const deleteGenre = async() => {
-        await axios.delete(url+"/"+form.idGenre).then(response => {
+        await axios.delete(url+"/"+form.idGenre,  {
+            headers: {
+                'authorization': `Bearer ${token}`,
+                'Accept' : 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
             setModalDelete(false)
             getGenres()
             alert(response.data)
@@ -72,8 +109,11 @@ export default function () {
     }
 
     useEffect(()=>{
+
         getGenres()
-    }, [])
+
+        
+    }, [token])
 
     return (
         <div className="container p-4">

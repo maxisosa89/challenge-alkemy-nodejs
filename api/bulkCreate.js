@@ -1,4 +1,5 @@
-const { Genre } = require('./src/db.js');
+const { Genre, User, Role } = require('./src/db.js');
+const bcrypt = require('bcryptjs')
 
 module.exports = async function createInfo() {
     const genres = [{
@@ -16,4 +17,26 @@ module.exports = async function createInfo() {
     const genresValidate = await Genre.findAll();
     genresValidate.length === 0 &&
     await Genre.bulkCreate(genres)
+
+    const roles = [{nameRole:"admin"}, {nameRole:"user"}]
+    const rolesValidate = await Role.findAll();
+    rolesValidate.length === 0 &&
+    await Role.bulkCreate(roles)
+
+    let password = bcrypt.hashSync("123456", 10)
+    const user = {
+      nameUser: "Maxi",
+      email: "msosa89@outlook.com",
+      password: password
+    }
+    const userValidate = await User.findAll();
+    if (userValidate.length === 0){
+      const userDev = await User.create(user)
+      const rolesDev = await Role.findAll()
+      rolesDev[0].addUser(userDev)
+      rolesDev[1].addUser(userDev)
+    }
+
+
+
 }
