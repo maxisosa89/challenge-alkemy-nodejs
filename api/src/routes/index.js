@@ -12,7 +12,7 @@ const { postGenre } = require("./Genres/postGenre");
 const { deleteGenre } = require("./Genres/deleteGenre");
 const { putGenre } = require("./Genres/putGenre");
 
-
+const { getApiC } = require("./Characters/getApiC");
 /*          Configuracion de rutas:        */
 
 // Reviews:
@@ -22,6 +22,7 @@ router.delete("/genres/:idGenre", auth, deleteGenre)
 router.put("/genres/:idGenre", auth, putGenre)
 router.post("/signin", AuthController.signIn)
 router.post("/signup", AuthController.signUp)
+router.get("/getapi", getApiC)
 
 
 module.exports = router;

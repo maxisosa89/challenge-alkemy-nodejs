@@ -9,7 +9,6 @@ const logged = window.localStorage.getItem("logged")
 if (logged) {
   const user = JSON.parse(logged)
   var token = user.token
-  console.log(token)
 }
 
 function App() {

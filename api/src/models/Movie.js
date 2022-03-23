@@ -10,21 +10,60 @@ module.exports = (sequelize) => {
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4
     },
-    img: {
+    imgMovie: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        isUrl: {
+          args: true,
+          msg: "Image must be url."
+        },
+        notNull: {
+          msg: "Image cannot be null."
+        },
+        notEmpty: {
+          args: true,
+          msg: "Image is require."
+        },
+      },
     },
-    title: {
+    titleMovie: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      unique: true,
+      validate: {
+        notNull: {
+          msg: "Name cannot be null."
+        },
+        notEmpty: {
+          args: true,
+          msg: "Name is require."
+        },
+        len: {
+          args: [2, 255],
+          msg: "Name has to be between 2 and 255 characters."
+        }
+      }
     },
     release: {
-      type: DataTypes.DATE,
-      allowNull: false
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+      validate: {
+        isDate: {
+          args: true,
+          msg: "Release must be date."
+        },
+      } 
     },
     score: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      validate: {
+        isInt: {
+          args: true,
+          msg: "Score must be numbers."
+        },
+        
+      }
     },
   });
 };

@@ -10,25 +10,67 @@ module.exports = (sequelize) => {
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4
     },
-    img: {
+    imgCharacter: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        isUrl: {
+          args: true,
+          msg: "Image must be url."
+        },
+        notNull: {
+          msg: "Image cannot be null."
+        },
+        notEmpty: {
+          args: true,
+          msg: "Image is require."
+        },
+      },
     },
-    name: {
+    nameCharacter: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      unique: true,
+      validate: {
+        notNull: {
+          msg: "Name cannot be null."
+        },
+        notEmpty: {
+          args: true,
+          msg: "Name is require."
+        },
+        len: {
+          args: [2, 255],
+          msg: "Name has to be between 2 and 255 characters."
+        }
+      }
     },
     age: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      validate: {
+        isInt: {
+          args: true,
+          msg: "Age must be numbers."
+        },
+      },
     },
     weight: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      validate: {
+        isInt: {
+          args: true,
+          msg: "Weight must be numbers."
+        },  
+      },
     },
     story: {
       type: DataTypes.TEXT,
-      allowNull: false
+      validate: {
+        isAlphanumeric: {
+          args: true,
+          msg: "Story must be letters."
+        }
+      }
     },
   });
 };
