@@ -1,4 +1,4 @@
-const { Genre } = require('../../db');
+const { Genre, Movie } = require('../../db');
 const { Op } = require('@sequelize/core');
 
 const postGenre = ("/", async (req, res, next) => {
@@ -10,6 +10,16 @@ const postGenre = ("/", async (req, res, next) => {
             } },
             defaults: { nameGenre, imgGenre },
         });
+        if (movies && created) {
+            movies.map(async(e) => {
+                const movie = await Movie.findOne({
+                    where: {
+                        titleMovie: e
+                    }
+                })
+                genreCreated.addMovie(movie)
+            })
+        }
         created ? res.send("Genre created") : res.send("Genre already exists")
         
     

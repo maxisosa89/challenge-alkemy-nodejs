@@ -1,18 +1,17 @@
-const { Genre, Movie } = require('../../db');
+const { Character, Movie } = require('../../db');
 
-const putGenre = ("/", async (req, res, next) => {
+const putCharacter = ("/", async (req, res, next) => {
     try {
-        const { idGenre } = req.params;
-        const { nameGenre, imgGenre, addMovies, removeMovies } = req.body
-        const genreEdited = await Genre.findByPk(idGenre)
+        const { idCharacter } = req.params;
+        const { imgCharacter, nameCharacter, age, weight, story, addMovies, removeMovies } = req.body
+        const characterEdited = await Character.findByPk(idCharacter)
         
-        if (nameGenre || imgGenre){
-            await Genre.update({
-                nameGenre,
-                imgGenre
+        if (nameCharacter || imgCharacter){
+            await Character.update({
+                imgCharacter, nameCharacter, age, weight, story
             }, {
                 where: {
-                    idGenre,
+                    idCharacter,
                 }
             });
         }
@@ -23,7 +22,7 @@ const putGenre = ("/", async (req, res, next) => {
                         titleMovie: e
                     }
                 })
-                genreEdited.addMovie(movie)
+                characterEdited.addMovie(movie)
             })
         }
         if (removeMovies) {
@@ -33,10 +32,10 @@ const putGenre = ("/", async (req, res, next) => {
                         titleMovie: e
                     }
                 })
-                genreEdited.removeMovie(movie)
+                characterEdited.removeMovie(movie)
             })
         }
-        res.send("Genre updated")
+        res.send("Character updated")
         
     } catch (error) {
         const errors = []
@@ -48,4 +47,4 @@ const putGenre = ("/", async (req, res, next) => {
 
 });
 
-module.exports = { putGenre };
+module.exports = { putCharacter };
