@@ -29,7 +29,7 @@ export default function Login(){
     }
 
     const handleLogin = async() => {
-        await axios.post("/signin", formLogin).then(response => {
+        await axios.post("/auth/login", formLogin).then(response => {
             
             window.localStorage.setItem(
                 'logged', JSON.stringify(response.data)
@@ -37,7 +37,7 @@ export default function Login(){
         }).catch(err => alert(err))
     }
     const handleSignUp = async() => {
-        await axios.post("/signup", formLogin).then(response => {
+        await axios.post("/auth/register", formLogin).then(response => {
             setModalOpen(false)
             alert(response.data.msg)
             

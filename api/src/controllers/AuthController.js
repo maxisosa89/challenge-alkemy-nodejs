@@ -2,6 +2,7 @@ const { User } = require('../db')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const authConfig = require('../config/auth')
+const sgMail = require('../services/sendgrid')
 
 module.exports = {
     signIn(req, res) {
@@ -43,6 +44,22 @@ module.exports = {
             let token = jwt.sign({ user: user }, authConfig.secret, {
                 expiresIn: authConfig.expires
             })
+
+            //ENVIO DE MAIL
+            const msg = {
+                to: email,
+                from: "msosa89@outlook.com",
+                subject: "Bienvenido a la API de Disney!",
+                text: "Hola! Este es mi proyecto para el challenge de NodeJs. Saludos.",
+                mail_settings: {
+                    sandbox_mode: {
+                        enable: false
+                    }
+                }
+            }
+            sgMail.send(msg).then(response => response).catch(err => console.log(err))
+
+
             res.json({
                 user: user,
                 token: token,

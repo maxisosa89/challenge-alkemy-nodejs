@@ -13,6 +13,7 @@
     "npm": ">=6.14.6"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.6.2",
     "@sequelize/core": "^7.0.0-alpha.10",
     "axios": "^0.24.0",
     "bcryptjs": "^2.4.3",
