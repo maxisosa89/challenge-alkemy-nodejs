@@ -63,6 +63,7 @@ const deleteGenre = async (idGenre) => {
 const putGenre = async (idGenre, imgGenre, nameGenre, addMovie, removeMovie) => {
     try{
         const genreEdited = await Movie.findByPk(idGenre)
+        if(!genreEdited) throw new Error("ID not found.");
         if (imgGenre || nameGenre){
             await Genre.update({
                 imgGenre, nameGenre

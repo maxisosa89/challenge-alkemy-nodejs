@@ -104,7 +104,7 @@ const deleteMovies = async (idMovie) => {
 const putMovies = async (idMovie, imgMovie, titleMovie, release, score, addCharacter, removeCharacter, addGenre, removeGenre) => {
     try{
         const movieEdited = await Movie.findByPk(idMovie)
-        
+        if(!movieEdited) throw new Error("ID not found.");
         if (titleMovie || imgMovie || release || score){
             await Movie.update({
                 imgMovie, titleMovie, release, score
