@@ -1,0 +1,843 @@
+{
+	"info": {
+		"_postman_id": "6d37b45c-f704-4c7b-b96f-b670f98a1cbd",
+		"name": "Movies",
+		"description": "Endpoints para el crud de movies.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkVXNlciI6ImI0ZjMwMGUzLWVjNjEtNGE5MC1hOTc2LTgwZDYxMTUyOTM1OCIsIm5hbWVVc2VyIjoiTWF4aSIsImVtYWlsIjoibXNvc2E4OUBvdXRsb29rLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGZFYkdNS0RReDdVVEVPZmw0bmVSMC5jNkZTSDBURXc4N3pWcTZBVERoM0NGRld4eXM3ek4uIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0yN1QyMDowMjoxMy4zMzlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0yN1QyMDowMjoxMy4zMzlaIn0sImlhdCI6MTY0ODQxMTUwNCwiZXhwIjoxNjQ4NDk3OTA0fQ.38yx2ml8yDy6b_S67p07OsdtQy0pjXv2B_-3q79-gJY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/movies",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": "Devuelve todas las películas, una película especifica si se envía un id, o una lista filtrada por nombre, género y/o ordenada por fecha de estreno."
+			},
+			"response": [
+				{
+					"name": "Get All Movies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1203"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b3-EvuelCdw0xT66B1D16nq8S8Seoc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 21:02:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"idMovie\": \"dd435754-33a7-4bb5-b376-ce71e03dbc4a\",\n        \"titleMovie\": \"Snow White and the Seven Dwarfs\",\n        \"imgMovie\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236839/Challenge%20NodeJs%20Alkemy/1699953239962179215_juh2ex.jpg\",\n        \"release\": \"1937-12-21\"\n    },\n    {\n        \"idMovie\": \"f4cd0543-16e7-42d4-88b8-c8026ee5e349\",\n        \"titleMovie\": \"The Jungle Book\",\n        \"imgMovie\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236857/Challenge%20NodeJs%20Alkemy/The-Jungle-Book-Poster_lipsit.jpg\",\n        \"release\": \"1967-10-14\"\n    },\n    {\n        \"idMovie\": \"bca90eea-d426-40ed-8b82-5fd76f16fc34\",\n        \"titleMovie\": \"The Lion King\",\n        \"imgMovie\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236875/Challenge%20NodeJs%20Alkemy/61sJaBqGxZL._AC_SY741__omwmdj.jpg\",\n        \"release\": \"1994-07-07\"\n    },\n    {\n        \"idMovie\": \"ad712404-8498-4aff-b0d3-8ee7cd7820b3\",\n        \"titleMovie\": \"Hercules\",\n        \"imgMovie\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236892/Challenge%20NodeJs%20Alkemy/81WpENETnyS._AC_SY879__cj6w0x.jpg\",\n        \"release\": \"1997-07-03\"\n    },\n    {\n        \"idMovie\": \"50ec0adb-89b9-43fc-b936-337db48d148a\",\n        \"titleMovie\": \"Peter Pan\",\n        \"imgMovie\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236915/Challenge%20NodeJs%20Alkemy/51DhSWMzZlL._AC__b6vli1.jpg\",\n        \"release\": \"1953-07-07\"\n    }\n]"
+				},
+				{
+					"name": "Get Movie by Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/dd435754-33a7-4bb5-b376-ce71e03dbc4a",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"dd435754-33a7-4bb5-b376-ce71e03dbc4a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "486"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e6-vduUk+F3nZf8h2T00G7TvAj8sN8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 21:02:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idMovie\": \"dd435754-33a7-4bb5-b376-ce71e03dbc4a\",\n    \"imgMovie\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236839/Challenge%20NodeJs%20Alkemy/1699953239962179215_juh2ex.jpg\",\n    \"titleMovie\": \"Snow White and the Seven Dwarfs\",\n    \"release\": \"1937-12-21\",\n    \"score\": 3,\n    \"createdAt\": \"2022-03-27T20:57:13.911Z\",\n    \"updatedAt\": \"2022-03-27T20:57:13.911Z\",\n    \"character\": [\n        {\n            \"nameCharacter\": \"Snow White\"\n        },\n        {\n            \"nameCharacter\": \"The Evil Queen\"\n        },\n        {\n            \"nameCharacter\": \"Bashful\"\n        }\n    ],\n    \"genre\": [\n        {\n            \"nameGenre\": \"Adventure\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Get Movies by name and genre",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies?name=l&genre=3af786e6-1d31-44b5-a981-d590833ef181",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "l"
+								},
+								{
+									"key": "genre",
+									"value": "3af786e6-1d31-44b5-a981-d590833ef181"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "318"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13e-5NqNaXmFbksZwnsfOvRC8q80TF4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 21:04:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"idMovie\": \"ad712404-8498-4aff-b0d3-8ee7cd7820b3\",\n        \"titleMovie\": \"Hercules\",\n        \"imgMovie\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236892/Challenge%20NodeJs%20Alkemy/81WpENETnyS._AC_SY879__cj6w0x.jpg\",\n        \"release\": \"1997-07-03\",\n        \"genre\": [\n            {\n                \"idGenre\": \"3af786e6-1d31-44b5-a981-d590833ef181\",\n                \"nameGenre\": \"Comedy\"\n            }\n        ]\n    }\n]"
+				},
+				{
+					"name": "Invalid Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/dd435754-1234-4bb5-b376-ce71e03dbc4a",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"dd435754-1234-4bb5-b376-ce71e03dbc4a"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-U1Oc8lCB5LWeYHYSTGG9Z44/6Fs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 21:05:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"ID not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Post Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkVXNlciI6ImI0ZjMwMGUzLWVjNjEtNGE5MC1hOTc2LTgwZDYxMTUyOTM1OCIsIm5hbWVVc2VyIjoiTWF4aSIsImVtYWlsIjoibXNvc2E4OUBvdXRsb29rLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGZFYkdNS0RReDdVVEVPZmw0bmVSMC5jNkZTSDBURXc4N3pWcTZBVERoM0NGRld4eXM3ek4uIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0yN1QyMDowMjoxMy4zMzlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0yN1QyMDowMjoxMy4zMzlaIn0sImlhdCI6MTY0ODQxMTUwNCwiZXhwIjoxNjQ4NDk3OTA0fQ.38yx2ml8yDy6b_S67p07OsdtQy0pjXv2B_-3q79-gJY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/movies",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": "Inserta una nueva película en la base de datos."
+			},
+			"response": [
+				{
+					"name": "Post Movie",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imgMovie\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648302110/Challenge%20NodeJs%20Alkemy/vqd3rsrey78fmfthqnqt.jpg\",\r\n    \"titleMovie\": \"newMovie\",\r\n    \"release\": \"2022-01-01\",\r\n    \"score\": \"5\",\r\n    \"genres\": [\"Action\"],\r\n    \"characters\": [\"Simba\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-fX/Yu0CZkovkINNFOXrOri1WiKg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 21:06:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "\"Movie created.\""
+				},
+				{
+					"name": "Post Existent Movie",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imgMovie\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648302110/Challenge%20NodeJs%20Alkemy/vqd3rsrey78fmfthqnqt.jpg\",\r\n    \"titleMovie\": \"newMovie\",\r\n    \"release\": \"2022-01-01\",\r\n    \"score\": \"5\",\r\n    \"genres\": [\"Action\"],\r\n    \"characters\": [\"Simba\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"63-dJT4bIKyp049KwnIrWy85zl4Oh8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 21:07:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"llave duplicada viola restricción de unicidad «movies_titleMovie_key»\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Put Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkVXNlciI6ImI0ZjMwMGUzLWVjNjEtNGE5MC1hOTc2LTgwZDYxMTUyOTM1OCIsIm5hbWVVc2VyIjoiTWF4aSIsImVtYWlsIjoibXNvc2E4OUBvdXRsb29rLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGZFYkdNS0RReDdVVEVPZmw0bmVSMC5jNkZTSDBURXc4N3pWcTZBVERoM0NGRld4eXM3ek4uIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0yN1QyMDowMjoxMy4zMzlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0yN1QyMDowMjoxMy4zMzlaIn0sImlhdCI6MTY0ODQxMTUwNCwiZXhwIjoxNjQ4NDk3OTA0fQ.38yx2ml8yDy6b_S67p07OsdtQy0pjXv2B_-3q79-gJY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/movies",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": "Modifica una película en la base de datos."
+			},
+			"response": [
+				{
+					"name": "Put Movie",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addCharacter\": [\"Nala\"],\r\n    \"removeCharacter\": [\"Simba\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/movies/479419e6-7a9a-486e-909a-79e4a1e2d168",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"movies",
+								"479419e6-7a9a-486e-909a-79e4a1e2d168"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-FEkvaO/wMRwI3vRsH5CzL5hjjvI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 21:10:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "\"Movie updated\""
+				},
+				{
+					"name": "Invalid Id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/479419e6-1234-486e-909a-79e4a1e2d168",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"479419e6-1234-486e-909a-79e4a1e2d168"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-U1Oc8lCB5LWeYHYSTGG9Z44/6Fs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 21:11:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"ID not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkVXNlciI6ImI0ZjMwMGUzLWVjNjEtNGE5MC1hOTc2LTgwZDYxMTUyOTM1OCIsIm5hbWVVc2VyIjoiTWF4aSIsImVtYWlsIjoibXNvc2E4OUBvdXRsb29rLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGZFYkdNS0RReDdVVEVPZmw0bmVSMC5jNkZTSDBURXc4N3pWcTZBVERoM0NGRld4eXM3ek4uIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0yN1QyMDowMjoxMy4zMzlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0yN1QyMDowMjoxMy4zMzlaIn0sImlhdCI6MTY0ODQxMTUwNCwiZXhwIjoxNjQ4NDk3OTA0fQ.38yx2ml8yDy6b_S67p07OsdtQy0pjXv2B_-3q79-gJY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/movies",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": "Elimina una película en la base de datos."
+			},
+			"response": [
+				{
+					"name": "Delete Movie",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/movies/479419e6-7a9a-486e-909a-79e4a1e2d168",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"movies",
+								"479419e6-7a9a-486e-909a-79e4a1e2d168"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-dTAodu97qNM/lpH+jhpG1TqlBlM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 21:12:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "\"Movie deleted\""
+				},
+				{
+					"name": "Invalid Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/479419e6-1234-486e-909a-79e4a1e2d168",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"479419e6-1234-486e-909a-79e4a1e2d168"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-U1Oc8lCB5LWeYHYSTGG9Z44/6Fs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 21:13:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"ID not found.\"\n}"
+				}
+			]
+		}
+	]
+}

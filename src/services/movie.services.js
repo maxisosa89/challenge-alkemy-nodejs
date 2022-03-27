@@ -20,6 +20,7 @@ const getMovieById = async (idMovie) => {
             }}]
             
         });
+        if (!movie) throw new Error("ID not found.")
         return movie;
     } catch(err) {
         throw err;
@@ -94,6 +95,7 @@ const postMovies = async (imgMovie, titleMovie, release, score, genres, characte
 const deleteMovies = async (idMovie) => {
     try {
         const movieDeleted = await Movie.findByPk(idMovie);
+        if (!movieDeleted) throw new Error("ID not found.")
         await movieDeleted.destroy();
         return "Movie deleted";
     } catch(err){
@@ -128,7 +130,7 @@ const putMovies = async (idMovie, imgMovie, titleMovie, release, score, addChara
             removeCharacter.map(async(e) => {
                 const character = await Character.findOne({
                     where: {
-                        titleMovie: e
+                        nameCharacter: e
                     }
                 })
                 movieEdited.removeCharacter(character)
