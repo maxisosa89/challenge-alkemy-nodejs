@@ -1,0 +1,898 @@
+{
+	"info": {
+		"_postman_id": "e433b8b7-cfb3-4720-8e6f-b126784a804b",
+		"name": "Characters",
+		"description": "Endpoints para el crud de characters.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Characters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/characters",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"characters"
+					]
+				},
+				"description": "Devuelve todos los caracteres, un carácter especifico si se envía un id, o una lista filtrada por nombre, edad, peso y/o películas."
+			},
+			"response": [
+				{
+					"name": "Get All Characters",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/characters",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3279"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ccf-AGQx4gz0UozVhD2RG/WBXsj8jMI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 20:05:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"idCharacter\": \"d109de3c-619d-4f50-88e0-b167f5e3e095\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043359/Challenge%20NodeJs%20Alkemy/Profile_-_Snow_White_i7qiy3.jpg\",\n        \"nameCharacter\": \"Snow White\"\n    },\n    {\n        \"idCharacter\": \"8440816a-d3bb-43ff-9c60-527dfd2d98eb\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043378/Challenge%20NodeJs%20Alkemy/Profile_-_The_Evil_Queen_wcul28.jpg\",\n        \"nameCharacter\": \"The Evil Queen\"\n    },\n    {\n        \"idCharacter\": \"9583b7bd-8c5c-4555-81b6-9b44056800a5\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043385/Challenge%20NodeJs%20Alkemy/Profile_-_Bashful_aooioy.png\",\n        \"nameCharacter\": \"Bashful\"\n    },\n    {\n        \"idCharacter\": \"0aef4913-7f88-442d-8fe5-cd300b3adf7d\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043399/Challenge%20NodeJs%20Alkemy/Profile_-_Mowgli_iazya0.jpg\",\n        \"nameCharacter\": \"Mowgli\"\n    },\n    {\n        \"idCharacter\": \"e8d0860b-08ee-4c52-bdf4-e2a0cdadbea0\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043404/Challenge%20NodeJs%20Alkemy/Profile_-_Baloo_f306md.jpg\",\n        \"nameCharacter\": \"Baloo\"\n    },\n    {\n        \"idCharacter\": \"6d7f27b6-1e9b-4840-844f-f9be0213b2bf\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043517/Challenge%20NodeJs%20Alkemy/Profile_-_King_Louie_oakrsu.jpg\",\n        \"nameCharacter\": \"King Louie\"\n    },\n    {\n        \"idCharacter\": \"58425084-c0dc-4958-8cc8-ec8b9a52a27a\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043533/Challenge%20NodeJs%20Alkemy/Profile_-_Nala_hou29y.jpg\",\n        \"nameCharacter\": \"Nala\"\n    },\n    {\n        \"idCharacter\": \"3bca18a9-76d3-4951-992b-edec0cc498f6\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043550/Challenge%20NodeJs%20Alkemy/Profile_-_Simba_smcird.jpg\",\n        \"nameCharacter\": \"Simba\"\n    },\n    {\n        \"idCharacter\": \"ba48e166-dcb2-4fea-9938-32ef98a5c289\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043564/Challenge%20NodeJs%20Alkemy/Profile_-_Pumbaa_ysdsxo.jpg\",\n        \"nameCharacter\": \"Pumba\"\n    },\n    {\n        \"idCharacter\": \"078dbd10-4739-456f-8c83-6e1eed8dda17\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043579/Challenge%20NodeJs%20Alkemy/Profile_-_Hades_eavktu.jpg\",\n        \"nameCharacter\": \"Hades\"\n    },\n    {\n        \"idCharacter\": \"ea92c914-2fd8-4b81-8497-560aab49fcc8\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043637/Challenge%20NodeJs%20Alkemy/Profile_-_Hercules_ihr7bq.jpg\",\n        \"nameCharacter\": \"Hercules\"\n    },\n    {\n        \"idCharacter\": \"a26e4f84-f7b9-4bf8-987b-813f274765b7\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043657/Challenge%20NodeJs%20Alkemy/Zeus_Hercules_97_yne4je.jpg\",\n        \"nameCharacter\": \"Zeus\"\n    },\n    {\n        \"idCharacter\": \"aae5a86f-b963-427b-a79c-efea7fdb0eab\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043675/Challenge%20NodeJs%20Alkemy/Profile_-_Peter_Pan_yfv6x6.jpg\",\n        \"nameCharacter\": \"Peter Pan\"\n    },\n    {\n        \"idCharacter\": \"6280bba0-2c8a-4fd6-ba69-2aabe4d09c30\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043699/Challenge%20NodeJs%20Alkemy/Profile_-_Tinker_Bell_m23jie.jpg\",\n        \"nameCharacter\": \"Tinker Bell\"\n    },\n    {\n        \"idCharacter\": \"9b33166c-7e3e-499b-b0db-c266171ed7f8\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043722/Challenge%20NodeJs%20Alkemy/Profile_-_Captain_Hook_wst755.jpg\",\n        \"nameCharacter\": \"Captain Hook\"\n    }\n]"
+				},
+				{
+					"name": "Get Character by Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/characters/d109de3c-619d-4f50-88e0-b167f5e3e095",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"characters",
+								"d109de3c-619d-4f50-88e0-b167f5e3e095"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "836"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"344-V2OZrn3sACnIBF03c926LwtiZxk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 20:06:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idCharacter\": \"d109de3c-619d-4f50-88e0-b167f5e3e095\",\n    \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043359/Challenge%20NodeJs%20Alkemy/Profile_-_Snow_White_i7qiy3.jpg\",\n    \"nameCharacter\": \"Snow White\",\n    \"age\": 14,\n    \"weight\": 46,\n    \"story\": \"Snow White's evil stepmother cannot bear that the young woman's beauty is superior to her own and decides to end her life. The beautiful Snow White manages to take refuge in a tiny cabin in the woods where seven cute dwarfs live. Despite everything, the cruel stepmother manages to find her whereabouts and poisons her with an apple. Her poison will plunge the young woman into an eternal sleep from which only a Prince Charming can wake her up.\",\n    \"createdAt\": \"2022-03-27T20:02:13.386Z\",\n    \"updatedAt\": \"2022-03-27T20:02:13.386Z\",\n    \"movie\": [\n        {\n            \"titleMovie\": \"Snow White and the Seven Dwarfs\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Get Characters by filters",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/characters?name=a&age=5&weight=150&movies=28fcfbf8-8c6a-4a85-a2b8-e1ee116c3a2f",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "a"
+								},
+								{
+									"key": "age",
+									"value": "5"
+								},
+								{
+									"key": "weight",
+									"value": "150"
+								},
+								{
+									"key": "movies",
+									"value": "28fcfbf8-8c6a-4a85-a2b8-e1ee116c3a2f"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "325"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"145-gudehh8uGj/Qn4WyUjDVuJOKXME\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 20:08:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"idCharacter\": \"3bca18a9-76d3-4951-992b-edec0cc498f6\",\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648043550/Challenge%20NodeJs%20Alkemy/Profile_-_Simba_smcird.jpg\",\n        \"nameCharacter\": \"Simba\",\n        \"age\": 5,\n        \"weight\": 150,\n        \"movie\": [\n            {\n                \"idMovie\": \"28fcfbf8-8c6a-4a85-a2b8-e1ee116c3a2f\",\n                \"titleMovie\": \"The Lion King\"\n            }\n        ]\n    }\n]"
+				},
+				{
+					"name": "Invalid Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/characters/124",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"characters",
+								"124"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-U1Oc8lCB5LWeYHYSTGG9Z44/6Fs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 20:09:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"ID not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Post Characters",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/characters",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"characters"
+					]
+				},
+				"description": "Inserta un nuevo carácter en la base de datos."
+			},
+			"response": [
+				{
+					"name": "Post Character",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648302110/Challenge%20NodeJs%20Alkemy/vqd3rsrey78fmfthqnqt.jpg\",\r\n        \"nameCharacter\": \"Timon\",\r\n        \"age\": \"3\",\r\n        \"weight\": \"1\",\r\n        \"story\": \"Timon is a comical meerkat and the life partner of Pumbaa the warthog who appears as a minor character in the 1994 Disney film The Lion King and its related universe, most notably the 2004 spin-off film The Lion King 1½. where he is the main protagonist.\",\r\n        \"movies\": [\"The Lion King\"]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/characters",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13-jEBT6aBe+oGPCd7uqArSTavwjwA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 20:11:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "\"Character created\""
+				},
+				{
+					"name": "Post a existent character",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"imgCharacter\": \"https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648302110/Challenge%20NodeJs%20Alkemy/vqd3rsrey78fmfthqnqt.jpg\",\r\n        \"nameCharacter\": \"Timon\",\r\n        \"age\": \"3\",\r\n        \"weight\": \"1\",\r\n        \"story\": \"Timon is a comical meerkat and the life partner of Pumbaa the warthog who appears as a minor character in the 1994 Disney film The Lion King and its related universe, most notably the 2004 spin-off film The Lion King 1½. where he is the main protagonist.\",\r\n        \"movies\": [\"The Lion King\"]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/characters",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "106"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6a-e97bqL6kr39wYr0oBLsI00j1wQg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 20:12:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"llave duplicada viola restricción de unicidad «characters_nameCharacter_key»\"\n}"
+				},
+				{
+					"name": "Invalid URL",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"imgCharacter\": \"notUrl\",\r\n        \"nameCharacter\": \"InvalidUrl\",\r\n        \"age\": \"3\",\r\n        \"weight\": \"1\",\r\n        \"story\": \"Timon is a comical meerkat and the life partner of Pumbaa the warthog who appears as a minor character in the 1994 Disney film The Lion King and its related universe, most notably the 2004 spin-off film The Lion King 1½. where he is the main protagonist.\",\r\n        \"movies\": [\"The Lion King\"]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/characters",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-Qt6uc3mq251pgsC2UtPVBmcFL8E\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 20:13:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"Validation error: Image must be url.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Put Characters",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"description": "Modifica un carácter de la base de datos."
+			},
+			"response": [
+				{
+					"name": "Update character",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"age\": \"300\",\r\n    \"weight\": \"100\",\r\n    \"removeMovies\": [\"The Lion King\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/characters/a7b33340-9768-4754-83e9-b7460d20dfd8",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"characters",
+								"a7b33340-9768-4754-83e9-b7460d20dfd8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13-PRUBWLigBgAsGnj4EINl7lWuNuo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 20:16:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "\"Character update.\""
+				},
+				{
+					"name": "Invalid Id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"age\": \"300\",\r\n    \"weight\": \"100\",\r\n    \"removeMovies\": [\"The Lion King\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/characters/1234",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"characters",
+								"1234"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"58-uK+p8yq1CWplIWtv5QPPk4M6OJw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 20:18:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"la sintaxis de entrada no es válida para tipo uuid: «1234»\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Characters",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkVXNlciI6ImI0ZjMwMGUzLWVjNjEtNGE5MC1hOTc2LTgwZDYxMTUyOTM1OCIsIm5hbWVVc2VyIjoiTWF4aSIsImVtYWlsIjoibXNvc2E4OUBvdXRsb29rLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGZFYkdNS0RReDdVVEVPZmw0bmVSMC5jNkZTSDBURXc4N3pWcTZBVERoM0NGRld4eXM3ek4uIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0yN1QyMDowMjoxMy4zMzlaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0yN1QyMDowMjoxMy4zMzlaIn0sImlhdCI6MTY0ODQxMTUwNCwiZXhwIjoxNjQ4NDk3OTA0fQ.38yx2ml8yDy6b_S67p07OsdtQy0pjXv2B_-3q79-gJY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/characters",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"characters"
+					]
+				},
+				"description": "Elimina un carácter de la base de datos."
+			},
+			"response": [
+				{
+					"name": "Delete Character",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/characters/a7b33340-9768-4754-83e9-b7460d20dfd8",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"characters",
+								"a7b33340-9768-4754-83e9-b7460d20dfd8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13-GYDidtoGGhKmqdCkWinfrmw57HY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 20:19:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "\"Character deleted\""
+				},
+				{
+					"name": "Invalid Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/characters/a7b33340-1234-4754-83e9-b7460d20dfd8",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"characters",
+								"a7b33340-1234-4754-83e9-b7460d20dfd8"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-U1Oc8lCB5LWeYHYSTGG9Z44/6Fs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 20:19:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"ID not found.\"\n}"
+				}
+			]
+		}
+	]
+}

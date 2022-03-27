@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "be1f60a8-1719-489a-961e-e01d809679e7",
+		"name": "Auth",
+		"description": "Endpoints para el Login y el Registro.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameUser\": \"New\",\r\n    \"email\": \"mail@mail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/auth/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				},
+				"description": "Creación de nuevo usuario."
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameUser\": \"newUser\",\r\n    \"email\": \"mail@mail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "640"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"280-GLgozMxzCiROX+8slnxlqm6bvMg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 03:21:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idUser\": \"491d5158-f33f-40fa-9200-b67601d0cd52\",\n    \"nameUser\": \"newUser\",\n    \"email\": \"mail@mail.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkVXNlciI6IjQ5MWQ1MTU4LWYzM2YtNDBmYS05MjAwLWI2NzYwMWQwY2Q1MiIsIm5hbWVVc2VyIjoibmV3VXNlciIsImVtYWlsIjoibWFpbEBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGgxeXRHRWpKL0dFcW9XNHpnZUN4Q2U2Q3VYMDZrWVVBT2V5YkYuYU9MdS4zSmJwcEtpUGlHIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0yN1QwMzoyMTozNS41ODNaIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0yN1QwMzoyMTozNS41ODNaIn0sImlhdCI6MTY0ODM1MTI5NSwiZXhwIjoxNjQ4NDM3Njk1fQ.0eRdRNphUCJzPylpSeaOLZLPk6ljEHwTlJweIuX0PL0\",\n    \"msg\": \"Registered. A welcome email has been sent to mail@mail.com.\"\n}"
+				},
+				{
+					"name": "Invalid email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameUser\": \"newUser\",\r\n    \"email\": \"mail\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-1p/komPS5ssp3pPJ76hEKRdwCZI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 03:23:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"Validation error: Enter a valid email.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"msosa89@outlook.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/auth/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "Login de usuario registrado."
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"msosa89@outlook.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "579"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"243-F+oZ2lxHMoNYHywhuuPwBJthzCY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 03:30:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idUser\": \"d77f0a16-3530-45ed-b02c-ba0e125977b2\",\n    \"nameUser\": \"Maxi\",\n    \"email\": \"msosa89@outlook.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkVXNlciI6ImQ3N2YwYTE2LTM1MzAtNDVlZC1iMDJjLWJhMGUxMjU5NzdiMiIsIm5hbWVVc2VyIjoiTWF4aSIsImVtYWlsIjoibXNvc2E4OUBvdXRsb29rLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFNtODFKRjZjVHZOazJIOThqejZvb3UuNFNSMEtMdmM1QzdIRHZkcW5KVi5oSkp4N0lmL1E2IiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0yN1QwMzozMDoyMy4zMDVaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0yN1QwMzozMDoyMy4zMDVaIn0sImlhdCI6MTY0ODM1MTg1MiwiZXhwIjoxNjQ4NDM4MjUyfQ.sWFGS5V36gkzLVvYs73mkYAS10nlgbMqVSQLokwKlpQ\"\n}"
+				},
+				{
+					"name": "Invalid password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"msosa89@outlook.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, OPTIONS, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-L3kkBrLpR/apG+8Lp3HT1H4JFhQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Mar 2022 03:31:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"message\": \"Password incorrect.\"\n}"
+				}
+			]
+		}
+	]
+}
