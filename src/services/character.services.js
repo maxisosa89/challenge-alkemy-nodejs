@@ -94,7 +94,7 @@ const deleteCharacter = async (idCharacter) => {
 const putCharacter = async (idCharacter, imgCharacter, nameCharacter, age, weight, story, addMovies, removeMovies) => {
     try{
         const characterEdited = await Character.findByPk(idCharacter)
-        if(!characterEdited) throw new Error("ID not found.");
+        if(!characterEdited) throw error("ID");
         const characterUpdate = await Character.update({
             imgCharacter, nameCharacter, age, weight, story
         }, {

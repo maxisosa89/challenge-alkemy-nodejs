@@ -53,6 +53,7 @@ const postGenre = async (imgGenre, nameGenre, movies) => {
 const deleteGenre = async (idGenre) => {
     try {
         const genreDeleted = await Genre.findByPk(idGenre);
+        if (!genreDeleted) throw new Error("ID not found.")
         await genreDeleted.destroy();
         return "Genre deleted";
     } catch(err){
@@ -62,7 +63,7 @@ const deleteGenre = async (idGenre) => {
 
 const putGenre = async (idGenre, imgGenre, nameGenre, addMovie, removeMovie) => {
     try{
-        const genreEdited = await Movie.findByPk(idGenre)
+        const genreEdited = await Genre.findByPk(idGenre)
         if(!genreEdited) throw new Error("ID not found.");
         if (imgGenre || nameGenre){
             await Genre.update({
