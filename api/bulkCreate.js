@@ -1,5 +1,6 @@
 const { Genre, User, Role, Movie, Character } = require('./src/db.js');
 const bcrypt = require('bcryptjs')
+const { AUTH_PASSWORD } = process.env;
 
 module.exports = async function createInfo() {
     const genres = [{
@@ -18,12 +19,7 @@ module.exports = async function createInfo() {
     genresValidate.length === 0 &&
     await Genre.bulkCreate(genres)
 
-    const roles = [{nameRole:"admin"}, {nameRole:"user"}]
-    const rolesValidate = await Role.findAll();
-    rolesValidate.length === 0 &&
-    await Role.bulkCreate(roles)
-
-    let password = bcrypt.hashSync("123456", 10)
+    let password = bcrypt.hashSync(AUTH_PASSWORD, 10)
     const user = {
       nameUser: "Maxi",
       email: "msosa89@outlook.com",
@@ -32,42 +28,39 @@ module.exports = async function createInfo() {
     const userValidate = await User.findAll();
     if (userValidate.length === 0){
       const userDev = await User.create(user)
-      const rolesDev = await Role.findAll()
-      rolesDev[0].addUser(userDev)
-      rolesDev[1].addUser(userDev)
     }
 
     const movies = [
       {
-          imgMovie: "https://1.bp.blogspot.com/-GwSufiJE9n4/XXq35IyG6II/AAAAAAAAJl4/8thoF-qgpsIZbA5IHMsNLVnBt4zWdou1ACLcBGAsYHQ/s1600/1699953239962179215.jpg",
+          imgMovie: "https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236839/Challenge%20NodeJs%20Alkemy/1699953239962179215_juh2ex.jpg",
           titleMovie: "Snow White and the Seven Dwarfs",
           release: "1937-12-21",
           score: "3",
           genres: ["Adventure"]
       },
       {
-          imgMovie: "https://www.lacasadeel.net/wp-content/uploads/2015/08/The-Jungle-Book-Poster.jpg",
+          imgMovie: "https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236857/Challenge%20NodeJs%20Alkemy/The-Jungle-Book-Poster_lipsit.jpg",
           titleMovie:  "The Jungle Book",
           release: "1967-10-14",
           score: "4",
           genres: ["Adventure", "Action"]
       },
       {
-          imgMovie: "https://m.media-amazon.com/images/I/61sJaBqGxZL._AC_SY741_.jpg",
+          imgMovie: "https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236875/Challenge%20NodeJs%20Alkemy/61sJaBqGxZL._AC_SY741__omwmdj.jpg",
           titleMovie:  "The Lion King",
           release: "1994-07-07",
           score: "5",
           genres: ["Action", "Adventure"]
       },
       {
-          imgMovie: "https://m.media-amazon.com/images/I/81WpENETnyS._AC_SY879_.jpg",
+          imgMovie: "https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236892/Challenge%20NodeJs%20Alkemy/81WpENETnyS._AC_SY879__cj6w0x.jpg",
           titleMovie:  "Hercules",
           release: "1997-07-03",
           score: "4",
           genres: ["Adventure", "Comedy", "Action"]
       },
       {
-          imgMovie: "https://m.media-amazon.com/images/I/51DhSWMzZlL._AC_.jpg",
+          imgMovie: "https://res.cloudinary.com/dg7fmdsmw/image/upload/v1648236915/Challenge%20NodeJs%20Alkemy/51DhSWMzZlL._AC__b6vli1.jpg",
           titleMovie:  "Peter Pan",
           release: "1953-07-07",
           score: "3",

@@ -14,10 +14,6 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isAlpha: {
-          args: true,
-          msg: "Name must be letters."
-        },
         notNull: {
           msg: "Name cannot be null."
         }, 

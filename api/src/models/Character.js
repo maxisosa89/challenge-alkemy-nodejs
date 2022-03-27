@@ -65,12 +65,6 @@ module.exports = (sequelize) => {
     },
     story: {
       type: DataTypes.TEXT,
-      validate: {
-        isAlphanumeric: {
-          args: true,
-          msg: "Story must be letters."
-        }
-      }
     },
   });
 };

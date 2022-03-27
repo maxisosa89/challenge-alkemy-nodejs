@@ -59,7 +59,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Character, Movie, Genre, User, Role } = sequelize.models;
+const { Character, Movie, Genre, User } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
@@ -72,8 +72,6 @@ Movie.belongsToMany(Character, { as: "character", through: 'character_movie', fo
 Movie.belongsToMany(Genre, { as: "genre", through: 'movie_genre', foreignKey: "movie_id" });
 Genre.belongsToMany(Movie, { as: "movie", through: 'movie_genre', foreignKey: "genre_id" }); 
 
-User.belongsToMany(Role, { as: "role", through: 'user_role', foreignKey: "user_id" });
-Role.belongsToMany(User, { as: "user", through: 'user_role', foreignKey: "role_id" }); 
 
 /* uno a muchos
 Model1.hasMany(Model2);

@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const routes = require('./routes/index.js');
 
 const path = require('path');
+const { notFound, errorHandler } = require('./middlewares/error.js')
 
 require('./db.js');
 
@@ -27,6 +28,8 @@ server.use((req, res, next) => {
 });
 
 server.use('/', routes);
+server.use(notFound)
+server.use(errorHandler)
 
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
