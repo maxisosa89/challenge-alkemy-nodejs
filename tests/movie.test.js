@@ -2,7 +2,7 @@ let chai = require('chai');
 let chaiHttp = require('chai-http');
 const expect = require('chai').expect;
 chai.use(chaiHttp);
-const { Movie } = require('../db')
+const { Movie } = require('../src/db')
 const url= 'http://localhost:3001';
 const idMovie = "9881cf69-d493-4763-9a8b-53047d994a56"
 var agent = chai.request.agent(url)
